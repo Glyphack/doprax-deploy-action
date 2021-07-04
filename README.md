@@ -23,7 +23,7 @@ jobs:
       - name: deploy action step
         uses: Glyphack/doprax-deploy-action@v1
         with:
-          username: ${{ secrets.DOPRAX_EMAIL }}
+          email: ${{ secrets.DOPRAX_EMAIL }}
           password: ${{ secrets.DOPRAX_PASSWORD }}
           api_key: ${{ secrets.DOPRAX_API_KEY}}
           project_name: "myProject"
