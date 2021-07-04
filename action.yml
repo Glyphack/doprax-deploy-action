@@ -1,0 +1,27 @@
+name: "pull and deploy doprax project"
+description: "pulls and deploy doprax project from github"
+author: "sh.hooshyari@gmail.com"
+branding:
+  icon: upload-cloud
+  color: blue
+inputs:
+  email:
+    description: "doprax account email"
+    required: true
+  password:
+    description: "doprax account password"
+    required: true
+  api_key:
+    description: "doprax account api key"
+    required: true
+  project_name:
+    description: "name of the project to deploy"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.email }}
+    - ${{ inputs.password }}
+    - ${{ inputs.api_key }}
+    - ${{ inputs.project_name }}
